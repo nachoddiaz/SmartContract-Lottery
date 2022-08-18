@@ -31,7 +31,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         vrfCoordinatorV2Address,
         networkConfig[chainId]["precioEntrada"],
         networkConfig[chainId]["keyHash"],
-        subscriptionId,
+        networkConfig[chainId]["subscriptionId"],
         networkConfig[chainId]["callbackGasLimit"],
         networkConfig[chainId]["interval"],
     ] // estos argumentos se le pasan al constructor de Raffle
