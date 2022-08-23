@@ -24,7 +24,8 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         await vrfCoordinatorV2Mock.fundSubscription(subscriptionId, VRF_FUNDS)
     } else {
         //Si no estamos en devChain, desplegamos normal
-        vrfCoordinatorV2Address = networkConfig[chainId]["vrfCoordinatorV2"]
+        vrfCoordinatorV2Address = networkConfig[chainId].vrfCoordinatorV2
+        subscriptionId = networkConfig[chainId].subscriptionId
     }
 
     const arguments = [
